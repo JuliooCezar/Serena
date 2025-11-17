@@ -1,0 +1,391 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color:#F2713B;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #c084fc, #60a5fa);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header {
+  height: 400px; /* altura que quiser */
+  background: url('sua-imagem.jpg') no-repeat center center;
+  background-size: cover;
+  /* remove qualquer cor ou texto */
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+header .btn {
+  margin-top: 5px;
+  margin-right: 1px; /* espaçamento entre os botões */
+}
+
+header .btn {
+  margin-top: 150px; /* desce os botões 20px */
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background-color: transparent; /* sem fundo padrão */
+  color: #ff6200;
+  font-weight: bold;
+  border-radius: 25px; /* Mantém bordas arredondadas dos botões */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f3e8ff;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature {
+  background-color: #ffdab3;
+  border-radius: 15px; /* Mantém bordas arredondadas das features */
+  padding: 20px;
+  flex: 1 1 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature span {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.cta {
+  text-align: center;
+  background-color: #f3e8ff;
+  padding: 40px 20px;
+  border-radius: 15px; /* Mantém bordas arredondadas da CTA */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffdab3;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .chat-container {
+    width: 90%;  /* ocupa mais espaço na largura do celular */
+    right: 5%;   /* margem lateral */
+    bottom: 80px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .chat-messages {
+    height: 200px;
+  }
+}
+
+/* BOTÃO FLUTUANTE */
+#chat-toggle {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+#chat-toggle img {
+  width: 60px;
+  height: 80px;
+  border-radius: 40%; /* Mantém borda arredondada no ícone do botão */
+}
+
+/* CHAT */
+.chat-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: white;
+  border-radius: 0; /* Borda quadrada no container do chat */
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  font-size: 14px;
+  z-index: 9998;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.chat-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.chat-header {
+  background-color: #c084fc;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0; /* Borda quadrada no header do chat */
+}
+
+.chat-messages {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 0; /* Borda quadrada no container das mensagens */
+}
+
+.chat-messages video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 0; /* Borda quadrada no vídeo */
+}
+
+.chat-messages::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  border-radius: 0; /* Borda quadrada na sombra */
+  pointer-events: none;
+}
+
+.mensagens-conteudo {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 600;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  border-radius: 0; /* Borda quadrada na área do input */
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 0; /* Input quadrado */
+}
+
+.chat-input button {
+  background-color: #c084fc;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 0; /* Botão quadrado */
+}
+
+.message {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.serena {
+  color: #a855f7;
+}
+
+.user {
+  text-align: right;
+  color: #ffffff;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+header {
+  background: url('imagem-clara.png') no-repeat center center;
+  background-size: cover;
+}
+
+/* Quando o modo escuro estiver ativado */
+body.dark-mode header {
+  background: url('serenanoite.png') no-repeat center center;
+  background-size: cover;
+}
+
+body.dark-mode .btn {
+  background-color: transparent; /* sem fundo padrão */
+  color: #ffffff;
+}
+
+body.dark-mode .feature {
+  background-color: #2a2a2a;
+  color: #ddd;
+  box-shadow: none;
+}
+
+body.dark-mode .btn:hover {
+  background-color: rgb(255, 255, 255);   /* fundo branco ao passar o mouse */
+  color: #ff6200;            /* texto roxo para contraste */
+}
+
+body.dark-mode .btn {
+  background-color:transparent;
+  color: #2e2d2c; /* <- Cor da letra no dark */
+}
+
+body.dark-mode header {
+  padding-top: 250px; /* Altera a altura do topo do header no escuro */
+}
+
+body.dark-mode section h2,
+body.dark-mode section p {
+  color: #6b21a8;
+}
+
+body.dark-mode #sobre p {
+  color: #ffffff; /* branco para o parágrafo */
+}
+
+body.dark-mode footer {
+  background-color: #222;
+  color: #ccc;
+}
+
+.btn-toggle-tema {
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px; /* Mantém borda arredondada no botão tema */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(168, 85, 247, 0.4);
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10000;
+}
+
+.btn-toggle-tema:hover {
+  background-color: #9333ea;
+  box-shadow: 0 6px 12px rgba(147, 51, 234, 0.5);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  background: url('serena\ wallpear.png') no-repeat center center;
+  background-size: cover;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 0; /* Borda quadrada no wrapper do vídeo */
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  border-radius: 0; /* Vídeo quadrado */
+}
+
+.video-wrapper .mensagens-conteudo {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.video-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  border-radius: 0; /* Sombra quadrada */
+}

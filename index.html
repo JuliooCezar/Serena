@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serena - App de Saúde Mental</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<body>
+
+  <header>
+    <h1></h1> 
+    <p></p>
+    <a href="conheça Serena.html" class="btn">Conheça Serena</a>
+    <a href="sobre nos.html" class="btn">Sobre Nós</a>
+    <button class="btn-toggle-tema" id="toggle-theme">🌙 Tema Escuro</button>
+
+  </header>
+
+  <section id="sobre">
+    <h2>✨ O que é o Serena?</h2>
+    <p>Serena é um aplicativo de bem-estar emocional que combina tecnologia, empatia e diversão para te ajudar a viver com mais equilíbrio. Com desafios diários, mascote interativa, diário emocional inteligente e trilhas personalizadas, você cuida da mente enquanto joga e se desenvolve.</p>
+  </section>
+
+  <section>
+    <h2>🎮 Funcionalidades</h2>
+    <div class="features">
+      <div class="feature">
+        <span>💬</span><strong>Diário emocional com IA:</strong><br>
+        Registre seu humor e receba sugestões personalizadas.
+      </div>
+      <div class="feature">
+        <span>🌱</span><strong>Trilhas de bem-estar:</strong><br>
+        Crie hábitos saudáveis com metas semanais.
+      </div>
+      <div class="feature">
+        <span>🧸</span><strong>Mascote emocional:</strong><br>
+        Uma companheira virtual que evolui com você.
+      </div>
+      <div class="feature">
+        <span>🎯</span><strong>Desafios gamificados:</strong><br>
+        Mini missões para aliviar o estresse e fortalecer a saúde mental.
+      </div>
+      <div class="feature">
+        <span>📖</span><strong>Frases e reflexões:</strong><br>
+        Inspire-se todos os dias com mensagens que tocam.
+      </div>
+    </div>
+  </section>
+
+<section class="cta-wallpaper"></section>
+
+
+  <footer>
+    © 2025 Serena App | contato@serena.app  
+    <br>
+    Política de Privacidade • Termos de Uso
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO CHAT -->
+  <div id="chat-toggle" onclick="toggleChat()">
+    <img id="chat-icon" src="serena.png" alt="Serena" style="width: 60px; height: auto; border-radius: 40%;" />
+  </div>
+
+  <!-- JANELA DO CHAT -->
+<div class="chat-container chat-hidden" id="chat-container">
+  <div class="chat-header">Serena 💜</div>
+  <div class="chat-messages" id="messages">
+  <video autoplay muted loop playsinline>
+    <source src="serenalendovideo.mp4" type="video/mp4" />
+  </video>
+
+  <div class="mensagens-conteudo" id="mensagensConteudo">
+    <div class="message serena">
+      Olá! Eu sou a Serena 😊 ainda estou em versão beta, então algumas respostas são automáticas, ok?
+    </div>
+  </div>
+</div>
+
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Digite sua mensagem..." />
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
+</div>
+
+  <audio id="notificacaoSom" src="notificacao.wav.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

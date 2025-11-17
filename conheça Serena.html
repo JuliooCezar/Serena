@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #F2713B;
+      color: #000000;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: url('imagemclara.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+header {
+  height: 400px; /* altura que quiser */
+  background: url('sua-imagem.jpg') no-repeat center center;
+  background-size: cover;
+  /* remove qualquer cor ou texto */
+}
+
+    
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #a855f7;
+    }
+
+    .bubble {
+      background-color: #ffdab3;
+      padding: 25px;
+      border-radius: 20px;
+      margin-top: 30px;
+      box-shadow: 0 0 20px rgba(192, 132, 252, 0.2);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .serena-galeria {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: nowrap;
+      margin-top: 100px;
+    }
+
+    .serena-galeria img {
+      max-width: 200px;
+      border-radius: 20px;
+      animation: float 3s ease-in-out infinite;
+      box-shadow: 0 0 10px rgba(192, 132, 252, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .serena-galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #ffdab3;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 28px;
+      background-color: #ffdab3;
+      color: #000000;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      border: 2px solid #000000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-voltar:hover {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .btn-toggle-tema {
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;              /* IGUAL ao outro CSS */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(168, 85, 247, 0.4);
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10000;
+}
+
+    .btn-toggle-tema:hover {
+      background-color: #9333ea;
+      box-shadow: 0 6px 12px rgba(147, 51, 234, 0.5);
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: #6b21a8;
+    }
+
+    body.dark-mode header {
+      background: url('serenanoite.png') no-repeat center center;
+      background-size: cover;
+      color: #eee;
+    }
+
+    body.dark-mode .bubble {
+      background-color: #2a2a2a;
+      color: #ffffff;
+      box-shadow: none;
+    }
+
+    body.dark-mode footer {
+      background-color: #222;
+      color: #ccc;
+    }
+
+header {
+  background: url('serena\ wallpear.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+  body.dark-mode .btn-voltar {
+      background-color: transparent;
+      color: #fff;
+      border-color: #5e0e9a;
+    }
+
+body.dark-mode .btn-voltar:hover {
+  background-color: #9333ea;
+  color: #fff;
+  border-color: #7a2eff;
+}
+
+ body.dark-mode .member img {
+  border: 3px solid #9333ea !important;
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.8) !important;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1></h1>
+    <p></p>
+  </header>
+
+  <section class="section">
+    <h2>✨ Quem é a Serena?</h2>
+    <div class="bubble">
+      Serena é uma inteligência emocional pensada para acolher você nos dias bons e nos difíceis. Ela entende sentimentos, responde com empatia e está aqui para te ouvir, sempre com jeitinho e paciência. 
+      <br><br>
+      Com o visual inspirado na leveza e doçura, a <span class="highlight">Serena</span> é como aquela amiga que te abraça com palavras e cuida do seu coração. 🌸
+    </div>
+    <div class="serena-galeria">
+      <img src="Serenalado1.jpeg" alt="Serena lado 1" />
+      <img src="Serenalado2.png" alt="Mascote Serena" />
+      <img src="Serenalado3.png" alt="Serena lado 2" />
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>💬 O que a Serena pode fazer?</h2>
+    <div class="bubble">
+      A Serena conversa com você, entende seus sentimentos e responde com frases acolhedoras. Ela ainda está aprendendo, mas já faz companhia melhor do que muita gente por aí. 💬💕
+      <br><br>
+      Você pode contar que está triste, feliz, com medo ou ansioso… Ela sempre terá uma resposta fofa, gentil e reconfortante.
+    </div>
+  </section>
+
+<section class="section">
+  <h2>🌱 Quando Serena será lançada?</h2>
+  <div class="bubble">
+    A Serena ainda não tem uma data fixa para lançamento. O designer está dedicando tempo para aprender mais sobre IA e programação, com o objetivo de transformar a Serena de uma ideia em uma aplicação real e funcional. Além disso, há uma troca constante de ideias com o grupo para desenvolver o projeto e levar o app cada vez mais adiante.
+  </div>
+  <a href="index.html" class="btn-voltar">Voltar para o início</a>
+</section>
+
+  <footer>
+    © 2025 Serena App | contato@serena.app
+  </footer>
+
+ <button class="btn-toggle-tema" id="toggle-theme">🌙 Tema Escuro</button>
+
+  <script>
+  const toggleBtn = document.getElementById('toggle-theme');
+
+  // Função para atualizar o texto do botão conforme o tema
+  function atualizarTextoBotao() {
+    if(document.body.classList.contains('dark-mode')){
+      toggleBtn.innerText = '☀️ Tema Claro';
+    } else {
+      toggleBtn.innerText = '🌙 Tema Escuro';
+    }
+  }
+
+  // Aplica tema salvo no localStorage, se houver
+  if(localStorage.getItem('darkMode') === 'true'){
+    document.body.classList.add('dark-mode');
+  }
+  
+  // Atualiza texto do botão ao carregar a página
+  atualizarTextoBotao();
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    atualizarTextoBotao();
+  });
+</script>
+
